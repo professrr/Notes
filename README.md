@@ -5,19 +5,19 @@
 ## Подготовка
 
 Backend stack:
-*Node.js
-*Express
-*MongoDB
+* Node.js
+* Express
+* MongoDB
 ```
 cd backend
 npm install
 ```
 
 Frontend stack:
-*Vue 3 - база
-*Vue Router 4 - роутинг и редиректы
-*Vuex 4 - менеджер/хранилище
-*Axios - интеграция REST API
+* Vue 3 - база
+* Vue Router 4 - роутинг и редиректы
+* Vuex 4 - менеджер/хранилище
+* Axios - интеграция REST API
 ```
 cd frontend
 npm install
