@@ -7,7 +7,7 @@ const Note = {
     }),
     mutations: {
         appendNote(state, note) {
-            state.notes.push(note);
+            state.notes.push(Object.assign(note, {edit_toggle: false}));
         },
         deleteNote(state, id) {
             const removeIndex = state.notes.map(note => note._id).indexOf(id);
@@ -17,12 +17,16 @@ const Note = {
             const note = state.notes.find(note => note._id === id);
             Object.assign(note, data);
         },
+        clearNotes(state) {
+            state.notes = []
+        }
     },
     actions: {
         ajaxGetNotes(ctx, payload = {}) {
+            ctx.commit('clearNotes')
             api.get('/notes', payload).then(response => {
                 response.data.data.forEach(note => {
-                    ctx.commit('appendNote', note)
+                    ctx.commit('appendNote', note);
                 });
             })
         },
@@ -44,7 +48,7 @@ const Note = {
     },
     getters: {
         allNotes(state) {
-            return state.notes
+            return state.notes;
         }
     }
 }

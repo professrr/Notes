@@ -1,8 +1,10 @@
 <template>
     <div v-if="notes.length">
         <div v-for="note in notes" :key="note._id">
-            <p>{{note.data}}</p>
-            <button @click="editNote(note._id, note.data)">Редактировать</button>
+            <router-link v-if="!note.edit_toggle" :to="{name: 'Note', params: {id: note._id}}">{{note.data}}</router-link>
+            <textarea v-else v-model="note.data"></textarea>
+            <button v-if="!note.edit_toggle" @click="switchEditMode(note)">Редактировать</button>
+            <button v-else @click="editNote(note)">Сохранить</button>
             <button @click="deleteNote(note._id)">Удалить</button>
         </div>
     </div>
@@ -21,14 +23,19 @@ export default {
         store.dispatch('Note/ajaxGetNotes');
 
         const notes = ref(store.getters['Note/allNotes']);
-        const editNote = (id, data) => {
-            store.dispatch('Note/ajaxUpdateNote', {id, data});
+
+        const switchEditMode = (note) => {
+            note.edit_toggle = !note.edit_toggle;
+        }
+        const editNote = (note) => {
+            store.dispatch('Note/ajaxUpdateNote', {id: note._id, data: note.data});
+            switchEditMode(note);
         }
         const deleteNote = (id) => {
             store.dispatch('Note/ajaxDeleteNote', id);
         }
 
-        return {notes, editNote, deleteNote}
+        return {notes, switchEditMode, editNote, deleteNote}
     }
 }
 </script>
