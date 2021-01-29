@@ -5,9 +5,10 @@
 ## Подготовка
 
 Backend stack:
-* Node.js
-* Express
-* MongoDB
+* Node.js - сервер
+* Express - REST API 
+* MongoDB - база данных
+* Mongoose - драйвер mongodb
 ```
 cd backend
 npm install
