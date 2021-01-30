@@ -2,6 +2,8 @@
 
 Это простое, тестовое CRUD приложение - Notes
 
+![Здесь должна быть картинка](https://gist.githubusercontent.com/professrr/afc36d7b12f11d6919d65ab2c3ebeb85/raw/80c23d17daac157dbc854052599e7674b68c25a6/Notes..png)
+
 ## Подготовка
 
 Backend stack:
