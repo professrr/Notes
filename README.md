@@ -14,7 +14,7 @@
 
 ## Подготовка и предустановка <a name="before-start"></a>
 
-### Backend stack:
+#### Backend stack:
 * Node.js - сервер
 * Express - REST API 
 * MongoDB - база данных
@@ -36,7 +36,7 @@ cd backend
 npm install
 ```
 
-### Frontend stack:
+#### Frontend stack:
 * Vue 3 - лучший фреймворк
 * Vue Router 4 - роутинг и редиректы
 * Vuex 4 - менеджер/хранилище
@@ -48,7 +48,7 @@ npm install
 
 ## Запуск дев версий <a name="run-dev"></a>
 
-### Backend:
+#### Backend:
 ```sh
 # MongoDB
 mongod --dbpath /db/storage
@@ -58,7 +58,7 @@ cd backend
 npm run dev
 ```
 
-### Frontend:
+#### Frontend:
 ```sh
 cd frontend
 npm run serve
@@ -66,17 +66,77 @@ npm run serve
 
 ## Компиляция продакшена <a name="run-prod"></a>
 
-### Backend:
+#### Backend:
 ```sh
 # Node.js
 cd backend
 npm start
 ```
 
-### Frontend:
+#### Frontend:
 ```sh
 cd frontend
 npm run build
 ```
 
 ## API v1 эндпоинты <a name="api"></a>
+
+#### [GET] /api/v1/notes
+* Request (не требует query | payload)
+
+* Response 200
+```js
+  {
+    status: 'success',
+    data: [/* Массив заметок */]
+  }
+```
+
+#### [POST] /api/v1/notes
+* Request body
+```js
+  {
+    data: 'Ваша заметка любой длины...'
+  }
+```
+
+* Response 201
+```js
+  {
+    status: 'success',
+    data: 'Ваша заметка любой длины...'
+  }
+```
+
+#### [POST] /api/v1/notes/update
+* Request body
+```js
+  {
+    id: '6015bf6f163bdd548d32ef56', // ObjectID
+    data: 'Ваша заметка любой длины...'
+  }
+```
+
+* Response 200
+```js
+  {
+    status: 'success',
+    data: {/* Инфо об обновлении данных */}
+  }
+```
+
+#### [POST] /api/v1/notes/delete
+* Request body
+```js
+  {
+    id: '6015bf6f163bdd548d32ef56', // ObjectID
+  }
+```
+
+* Response 200
+```js
+  {
+    status: 'success',
+    data: {/* Инфо об удалении данных */}
+  }
+```
