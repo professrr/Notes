@@ -13,6 +13,7 @@ const notesSchema = new mongoose.Schema({
     },
 })
 
+// Здесь можно валидировать заметки при обновлеии или создании документа, решил убрать
 // const validateData = async function (next) {
 //     try {
         
@@ -21,8 +22,8 @@ const notesSchema = new mongoose.Schema({
 //     }
 // }
 
-notesSchema.pre('save', validateData);
-notesSchema.pre('update', validateData);
+// notesSchema.pre('save', validateData);
+// notesSchema.pre('update', validateData);
 
 const Notes = mongoose.model('Notes', notesSchema);
 module.exports = Notes;
