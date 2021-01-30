@@ -5,7 +5,14 @@
 ![Здесь должна быть картинка](https://gist.github.com/professrr/afc36d7b12f11d6919d65ab2c3ebeb85/raw/f49704a6b771a91c4d676cc4adce7872de76fe64/iphone_1.png)
 ![Здесь должна быть картинка](https://gist.github.com/professrr/afc36d7b12f11d6919d65ab2c3ebeb85/raw/f49704a6b771a91c4d676cc4adce7872de76fe64/iphone_2.png)
 
-## Подготовка и предустановка
+## Алиасы
+
+  - [Подготовка и предустановка](#before-start)
+  - [Запуск дев версий](#run-dev)
+  - [Компиляция продакшена](#run-prod)
+  - [API v1 эндпоинты](#api)
+
+## Подготовка и предустановка <a name="before-start"></a>
 
 ### Backend stack:
 * Node.js - сервер
@@ -39,7 +46,7 @@ cd frontend
 npm install
 ```
 
-## Запуск дев версий
+## Запуск дев версий <a name="run-dev"></a>
 
 ### Backend:
 ```sh
@@ -57,7 +64,7 @@ cd frontend
 npm run serve
 ```
 
-## Компиляция продакшена
+## Компиляция продакшена <a name="run-prod"></a>
 
 ### Backend:
 ```sh
@@ -71,3 +78,5 @@ npm start
 cd frontend
 npm run build
 ```
+
+## API v1 эндпоинты <a name="api"></a>
