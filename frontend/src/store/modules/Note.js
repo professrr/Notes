@@ -7,7 +7,7 @@ const Note = {
     }),
     mutations: {
         appendNote(state, note) {
-            state.notes.push(Object.assign(note, {edit_toggle: false}));
+            state.notes.unshift(Object.assign(note, {edit_toggle: false}));
         },
         deleteNote(state, id) {
             const removeIndex = state.notes.map(note => note._id).indexOf(id);
