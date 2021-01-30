@@ -8,7 +8,7 @@ const notesSchema = new mongoose.Schema({
     },
     ts: {
         type: Number,
-        default: Date.now(),
+        default: Date.now,
         required: [true, 'Необходим timestamp для создания Note.']
     },
 })

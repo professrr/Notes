@@ -104,7 +104,11 @@ npm run build
 ```js
   {
     status: 'success',
-    data: 'Ваша заметка любой длины...'
+    data: {
+      _id: '6015bf6f163bdd548d32ef56', // ObjectID
+      data: 'Ваша заметка любой длины...',
+      ts: 1612038276 // timestamp
+    }
   }
 ```
 
