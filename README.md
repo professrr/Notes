@@ -30,29 +30,44 @@ npm install
 ```
 
 ### Frontend stack:
-* Vue 3 - база
+* Vue 3 - лучший фреймворк
 * Vue Router 4 - роутинг и редиректы
 * Vuex 4 - менеджер/хранилище
 * Axios - интеграция REST API
-```
+```sh
 cd frontend
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Запуск дев версий
+
+### Backend:
+```sh
+# MongoDB
+mongod --dbpath /db/storage
+
+# Node.js
+cd backend
+npm run dev
 ```
+
+### Frontend:
+```sh
+cd frontend
 npm run serve
 ```
 
-### Compiles and minifies for production
+## Компиляция продакшена
+
+### Backend:
+```sh
+# Node.js
+cd backend
+npm start
 ```
+
+### Frontend:
+```sh
+cd frontend
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
