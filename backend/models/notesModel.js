@@ -13,13 +13,13 @@ const notesSchema = new mongoose.Schema({
     },
 })
 
-const validateData = async function (next) {
-    try {
-        console.log(this)
-    } catch(err) {
-        next(err);
-    }
-}
+// const validateData = async function (next) {
+//     try {
+        
+//     } catch(err) {
+//         next(err);
+//     }
+// }
 
 notesSchema.pre('save', validateData);
 notesSchema.pre('update', validateData);

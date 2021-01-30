@@ -39,12 +39,8 @@ export default {
         const id = ref(route.params.id);
         const notes = store.getters['Note/allNotes'];
 
-        console.log(notes);
         let search_note = notes.filter(note => note._id == id.value);
-        console.log(search_note);
         const note = ref(search_note.length ? search_note[0] : '');
-
-        console.log(note);
 
         const switchEditMode = (note) => {
             note.edit_toggle = !note.edit_toggle;
